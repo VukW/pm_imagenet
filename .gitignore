@@ -1,0 +1,6 @@
+*.JPEG
+*.tgz
+*.tar.gz
+*.pth
+*.pth.tar
+.idea
