@@ -4,3 +4,4 @@
 *.pth
 *.pth.tar
 .idea
+log.txt
