@@ -9,21 +9,26 @@ env:
     - AWS_DEFAULT_REGION=us-west-2
     - AWS_SECRET_ACCESS_KEY
     - AWS_ACCESS_KEY_ID
+    - MODEL_FILE=model.yaml
+    - MODEL_NAME=model-im-2
+    - DATA_S3=s3://vukw-1e2df75b/gandlf_dp/imagenette_resized.tar.gz
+    - GANDLF_S3=s3://vukw-1e2df75b/gandlf_dp/gandlf.tar.gz
+    - GANDLF_PATH=GaNDLF_DP/
 
 commands:
   - apt-get install git -y
   - python3.9 -m pip install awscli
   - aws s3 ls s3://vukw-1e2df75b/
-  - aws s3 cp s3://vukw-1e2df75b/gandlf_dp/data.tar.gz data.tar.gz && tar -xzf data.tar.gz
-  - aws s3 cp s3://vukw-1e2df75b/gandlf_dp/gandlf-vanilla.tar.gz gandlf.tar.gz && tar -xzf gandlf.tar.gz
+  - aws s3 cp $DATA_S3 data.tar.gz && tar -xzf data.tar.gz
+  - aws s3 cp $GANDLF_S3 gandlf.tar.gz && tar -xzf gandlf.tar.gz
   - ls -lGghrt .
   - pwd
   - python3.9 -m pip uninstall gandlf -y
-  - python3.9 -m pip install -e ./GaNDLF/
+  - python3.9 -m pip install -e $GANDLF_PATH
   - python3.9 -m pip list
   - python3.9 --version
   - chmod +x ./main.sh
-  - /bin/bash ./main.sh -m model-vanilla
+  - /bin/bash ./main.sh -f $MODEL_FILE -m $MODEL_NAME
 
 
 # (Optional) Configure `gpu`, `memory`, `disk`, etc

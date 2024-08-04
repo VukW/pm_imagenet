@@ -25,7 +25,7 @@ patch_size:
 modality: rad
 track_memory_usage: true
 memory_save_mode: true
-learning_rate: 0.000001
+learning_rate: 0.00001
 opt: sgd
 q_samples_per_volume: 4
 differential_privacy: false
@@ -33,6 +33,4 @@ differential_privacy: false
 #  type: cosineannealing
 #  min_lr: 0.000001
 data_preprocessing:
-  resize_image:
-  - 160
-  - 160
+  resize_image: [160, 160]
