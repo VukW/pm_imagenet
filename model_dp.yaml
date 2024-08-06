@@ -17,7 +17,7 @@ batch_size: 2
 metrics:
 - classification_accuracy
 - f1
-num_epochs: 20
+num_epochs: 200
 q_verbose: true
 patch_size:
 - 160
@@ -29,8 +29,5 @@ learning_rate: 0.000001
 opt: sgd
 q_samples_per_volume: 4
 differential_privacy: false
-#scheduler:
-#  type: cosineannealing
-#  min_lr: 0.000001
 data_preprocessing:
   resize_image: [160, 160]
