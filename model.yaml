@@ -1,21 +1,23 @@
 version:
-  maximum: 0.0.20
+  maximum: 0.1.1
   minimum: 0.0.18
 model:
-  architecture: resnet18
+  architecture: imagenet_vgg11
   dimension: 2
-  final_layer: softmax
+  final_layer: sigmoid
+  norm_type: instance
   n_channels: 3
   class_list: [0, 1]
+  pretrained: true
 nested_training:
   testing: 1
   validation: 2
 loss_function: cel
-batch_size: 4
+batch_size: 2
 metrics:
 - classification_accuracy
 - f1
-num_epochs: 20
+num_epochs: 200
 q_verbose: true
 patch_size:
 - 160
@@ -23,12 +25,9 @@ patch_size:
 modality: rad
 track_memory_usage: true
 memory_save_mode: true
-learning_rate: 0.0001
-scheduler:
-  type: cosineannealing
-  min_lr: 0.00001
+learning_rate: 0.000001
+opt: sgd
+q_samples_per_volume: 4
 differential_privacy: false
 data_preprocessing:
-  resize_image:
-  - 160
-  - 160
+  resize_image: [160, 160]
