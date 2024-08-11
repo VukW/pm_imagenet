@@ -31,10 +31,13 @@ download_and_unpack() {
 # Check if the -l or -t flag is provided
 download_logs_only=false
 specified_timestamp=""
-while getopts "lt:" opt; do
+while getopts "ilt:" opt; do
     case $opt in
         l)
             download_logs_only=true
+            ;;
+        i)
+            download_light_only=true
             ;;
         t)
             specified_timestamp=$OPTARG
@@ -54,6 +57,8 @@ fi
 # Determine the full template
 if $download_logs_only; then
     file_template="${template_prefix}_logs\.tar\.gz$"
+elif $download_light_only; then
+    file_template="${template_prefix}_light\.tar\.gz$"
 else
     file_template="${template_prefix}_full\.tar\.gz$"
 fi

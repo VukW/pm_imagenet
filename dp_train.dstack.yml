@@ -11,7 +11,7 @@ env:
     - AWS_ACCESS_KEY_ID
     - MODEL_FILE=model.yaml
     - MODEL_NAME=model-im-2
-    - DATA_S3=s3://vukw-1e2df75b/gandlf_dp/imagenette_resized.tar.gz
+    - DATA_S3=s3://vukw-1e2df75b/gandlf_dp/processed_images_160.tar.gz
     - GANDLF_S3=s3://vukw-1e2df75b/gandlf_dp/gandlf.tar.gz
     - GANDLF_PATH=GaNDLF_DP/
 
