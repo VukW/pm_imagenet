@@ -30,6 +30,6 @@ opt: sgd
 q_samples_per_volume: 4
 differential_privacy:
   max_grad_norm: 1000000.0
-  noise_multiplier: 0.0000001
+  noise_multiplier: 0.000000001
 data_preprocessing:
   resize_image: [160, 160]
