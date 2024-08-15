@@ -30,6 +30,7 @@ download_and_unpack() {
 
 # Check if the -l or -t flag is provided
 download_logs_only=false
+download_light_only=false
 specified_timestamp=""
 while getopts "ilt:" opt; do
     case $opt in

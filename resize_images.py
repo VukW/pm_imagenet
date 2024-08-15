@@ -29,6 +29,8 @@ def process_image(image_path, output_path):
             # Resize image
             img = img.resize((new_width, new_height), Image.LANCZOS)
 
+        img = img.convert('RGB')
+
         # Save image to the output path
         os.makedirs(os.path.dirname(output_path), exist_ok=True)
         img.save(output_path)
