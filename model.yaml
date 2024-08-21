@@ -4,7 +4,7 @@ version:
 model:
   architecture: imagenet_vgg11
   dimension: 2
-  final_layer: sigmoid
+  final_layer: softmax
   norm_type: instance
   n_channels: 3
   class_list: [0, 1]
