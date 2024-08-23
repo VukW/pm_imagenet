@@ -39,7 +39,7 @@ def create_csvs(imagenette_root_folder: str, classes: list[str], n_images_per_cl
     # Create CSVs for each dataset
     for name, data in datasets.items():
         df = pd.DataFrame(data, columns=['Channel_0', 'ValueToPredict', 'subjectID'])
-        df.to_csv(f'labels_imagenette_{name}.csv', index=False)
+        df.to_csv(f'labels_imagenette_3_{name}.csv', index=False)
 
 
 def main():
@@ -52,7 +52,7 @@ def main():
     # test_set = Imagenette(root='imagenette_data', split='val', size='full', download=False, transform=transform)  # Reuse val for example
 
     create_csvs('imagenette_data/imagenette2/',
-                classes=['n01440764', 'n02102040'])  # Example class IDs for 'tench' and 'English springer'
+                classes=['n01440764', 'n02102040', 'n02979186'])  # Example class IDs for 'tench' and 'English springer'
 
 
 if __name__ == "__main__":

@@ -36,7 +36,7 @@ full_s3_path="s3://vukw-1e2df75b/gandlf_dp/${model_path}_${timestamp}_full.tar.g
 logs_s3_path="s3://vukw-1e2df75b/gandlf_dp/${model_path}_${timestamp}_logs.tar.gz"
 
 # Run the GaNDLF command
-gandlf run -c $model_yaml_file -i labels_imagenette_train.csv -m "$model_path" -t -d cuda -rt |& tee -a log.txt
+gandlf run -c $model_yaml_file -i labels_imagenette_3_train.csv -m "$model_path" -t -d cuda -rt |& tee -a log.txt
 
 # Create tar.gz of the model and logs
 tar -czf ${model_path}_full.tar.gz "$model_path"

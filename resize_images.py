@@ -39,7 +39,7 @@ def process_image(image_path, output_path):
 # Collect all images to be processed
 images_to_process = []
 
-for split in ['train', 'val']:
+for split in ['train', 'val', 'test']:
     for class_name in classes_to_process:
         class_path = os.path.join(base_path, split, class_name)
         if not os.path.exists(class_path):
