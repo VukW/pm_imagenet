@@ -25,7 +25,7 @@ patch_size:
 modality: rad
 track_memory_usage: true
 memory_save_mode: true
-learning_rate: 0.000001
+learning_rate: 0.0000003
 opt: sgd
 q_samples_per_volume: 4
 differential_privacy:
